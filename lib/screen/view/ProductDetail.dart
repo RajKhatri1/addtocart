@@ -1,7 +1,6 @@
 import 'package:addtocart/screen/model/promodal.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../provider/homeprovider.dart';
 
 class detailScreen extends StatefulWidget {
@@ -13,10 +12,12 @@ class detailScreen extends StatefulWidget {
 
 class _detailScreenState extends State<detailScreen> {
   Homeprovider? homeprovider;
+
   @override
   Widget build(BuildContext context) {
     homeprovider = Provider.of<Homeprovider>(context, listen: false);
-    productmodel p1 = ModalRoute.of(context)!.settings.arguments as productmodel;
+    productmodel p1 =
+        ModalRoute.of(context)!.settings.arguments as productmodel;
     return Column(
       children: [
         Container(
@@ -31,7 +32,9 @@ class _detailScreenState extends State<detailScreen> {
         Text(
           "${p1.name}",
           style: TextStyle(
-              fontWeight: FontWeight.bold, color: Colors.black, fontSize: 20),
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+              fontSize: 20),
         ),
         SizedBox(
           height: 15,

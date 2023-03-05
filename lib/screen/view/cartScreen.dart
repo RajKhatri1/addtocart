@@ -24,7 +24,9 @@ class _cartscreenState extends State<cartscreen> {
             itemBuilder: (context, index) {
               return ListTile(
                 leading: Image.asset("${homeprovider!.l1[index].image}"),
-                title: Text("${homeprovider!.l1[index].name}",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold)),
+                title: Text("${homeprovider!.l1[index].name}",
+                    style:
+                        TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
                 subtitle: Text("${homeprovider!.l1[index].price}"),
                 trailing: Row(
                   mainAxisSize: MainAxisSize.min,
@@ -41,14 +43,18 @@ class _cartscreenState extends State<cartscreen> {
                       icon: Icon(Icons.add),
                     ),
                     Text("${homeprovider!.l1[index].qa}"),
-                    IconButton(onPressed: () {
-                      productmodel p1 = productmodel(
-                          name: homeprovider!.l1[index].name,
-                          image: homeprovider!.l1[index].image,
-                          price: homeprovider!.l1[index].price,
-                          qa: homeprovider!.l1[index].qa! - 1);
-                      homeprovider!.addqa(index, p1);
-                    }, icon: Icon(Icons.remove))
+                    IconButton(
+                      onPressed: () {
+                        productmodel p1 = productmodel(
+                            name: homeprovider!.l1[index].name,
+                            image: homeprovider!.l1[index].image,
+                            price: homeprovider!.l1[index].price,
+                            qa: homeprovider!.l1[index].qa! - 1);
+                        homeprovider!.addqa(index, p1);
+                      },
+                      icon: Icon(Icons.remove),
+
+                    )
                   ],
                 ),
               );
